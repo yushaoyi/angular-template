@@ -12,4 +12,4 @@ ng serve
 
 open localhost://4200
 ```
-大家觉得有用的话，麻烦给个star支持下，谢谢
+觉得有用的话，可以麻烦给个star支持下，谢谢
