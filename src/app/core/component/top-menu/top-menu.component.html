@@ -1,0 +1,13 @@
+<div class="top-bar">
+    <a class="logo" routerLink="/">
+      <img src="assets/imgs/logo.png"/>
+    </a>
+
+  <ul class="top-menu">
+    <li *ngFor="let menu of menus">
+      <a (click)="topMenuSelect($event, menu)">
+        <span>{{menu.name}}</span>
+      </a>
+    </li>
+  </ul>
+</div>

@@ -7,24 +7,35 @@ import { RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { SharedModule } from './shared/shared.module';
-import { CommonModule } from './common/common.module';
-import { UiKitComponent } from './ui-kit/ui-kit.component';
-import { ModalCustomizeComponent } from './ui-kit/modalCustomize.component';
+import { CoreModule } from './core/core.module';
+import { UiKitComponent } from './views/ui-kit/ui-kit.component';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
+
+// 自定义modal component
+import { ModalCustomizeComponent } from './views/ui-kit/modalCustomize.component';
+// In some cases entryComponents under lazy loaded
+// modules will not work, as a workaround put them in your app.module (root)
+// https://stackoverflow.com/questions/41519481/angular2-material-dialog-has-issues-did-you-add-it-to-ngmodule-entrycomponent/41519512#
+import { EditStudentModalComponet } from "./views/student/base-info/edit-student/edit-student.modal.componet";
+import { CustomizeComponentModule } from "./customize-component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     UiKitComponent,
-    ModalCustomizeComponent
+    // ModalCustomizeComponent,
+    // EditStudentModalComponet
   ],
   entryComponents: [
-    ModalCustomizeComponent
+    // ModalCustomizeComponent,
+    // EditStudentModalComponet
   ],
   imports: [
-    CommonModule,
+    CoreModule,
     SharedModule,
+    CustomizeComponentModule,
     BrowserModule,
     HttpModule,
     HttpClientModule,
@@ -32,7 +43,6 @@ import { appRoutes } from './app.routes';
     NgZorroAntdModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-
   bootstrap: [AppComponent]
 })
 export class AppModule { }
