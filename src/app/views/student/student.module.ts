@@ -7,7 +7,7 @@ import {ClassInfoComponent} from './class-info/class-info.component';
 import {StudentService} from './student.service';
 import {studentRoutes} from './student.routes';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
-// import {EditStudentModalComponet} from "./base-info/edit-student/edit-student.modal.componet";
+import {EditStudentModalComponet} from "./base-info/edit-student/edit-student.modal.componet";
 
 @NgModule({
   imports: [
@@ -19,10 +19,10 @@ import {NgZorroAntdModule} from 'ng-zorro-antd';
     StudentComponent,
     BaseInfoComponent,
     ClassInfoComponent,
-    // EditStudentModalComponet
+    EditStudentModalComponet
   ],
   entryComponents: [
-    // EditStudentModalComponet
+    EditStudentModalComponet
   ],
   providers: [
     StudentService
